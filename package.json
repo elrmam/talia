@@ -1,0 +1,22 @@
+{
+  "name": "talia-aqiqah-invitation",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "framer-motion": "6.5.1",
+    "lucide-react": "0.263.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "1.3.2",
+    "sass": "1.56.1",
+    "vite": "2.9.18"
+  }
+}
