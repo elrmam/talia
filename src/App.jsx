@@ -44,7 +44,7 @@ function App() {
   const [playing, setPlaying] = useState(false);
   const [showPlayer, setShowPlayer] = useState(false);
   const eventCalendar = useMemo(() => {
-    const start = '20261106T120000Z'; const end = '20261106T140000Z';
+    const start = '20261113T120000Z'; const end = '20261113T140000Z';
     const title = encodeURIComponent('عقيقة الأميرة تاليا');
     const details = encodeURIComponent('يسعدنا مشاركتكم فرحتنا بعقيقة تاليا — كافيه 101، خلف مدرسة رويال.');
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${encodeURIComponent('كافيه 101، خلف مدرسة رويال')}`;
@@ -61,7 +61,7 @@ function App() {
     if (audio) { try { await audio.play(); setPlaying(true); setShowPlayer(true); } catch { setPlaying(false); } }
   };
   const share = async () => {
-    const data = { title: 'عقيقة الأميرة تاليا', text: 'يسعدنا دعوتكم لمشاركتنا فرحتنا بعقيقة تاليا — الجمعة 6 نوفمبر 2026، الساعة 2 ظهرًا بعد صلاة الجمعة، كافيه 101.', url: window.location.href };
+    const data = { title: 'عقيقة الأميرة تاليا', text: 'يسعدنا دعوتكم لمشاركتنا فرحتنا بعقيقة تاليا — الجمعة 13 نوفمبر 2026، الساعة 2 ظهرًا بعد صلاة الجمعة، كافيه 101.', url: window.location.href };
     if (navigator.share) { try { await navigator.share(data); } catch {} }
     else if (navigator.clipboard) { await navigator.clipboard.writeText(window.location.href); alert('تم نسخ رابط الدعوة'); }
   };
@@ -103,7 +103,7 @@ function App() {
       <h2 className="section-title">باقي على فرحتنا</h2>
       <Countdown/>
       <div className="event-date">
-        <div className="event-date-line"><CalendarDays size={23}/><strong>الجمعة، 6 نوفمبر 2026</strong></div>
+        <div className="event-date-line"><CalendarDays size={23}/><strong>الجمعة، 13 نوفمبر 2026</strong></div>
         <div className="event-date-line"><Clock3 size={23}/><strong>2:00 ظهرًا</strong></div>
         <div className="event-after-prayer">بعد صلاة الجمعة</div>
       </div>
@@ -125,7 +125,7 @@ function App() {
       <div className="section-kicker"><span/> تفاصيل المناسبة <span/></div>
       <h2 className="section-title">نستناكم فين وإمتى؟</h2>
       <div className="details-grid">
-        <article className="detail-card"><div className="detail-icon"><CalendarDays/></div><span>اليوم والتاريخ</span><strong>الجمعة</strong><p>6 نوفمبر 2026</p></article>
+        <article className="detail-card"><div className="detail-icon"><CalendarDays/></div><span>اليوم والتاريخ</span><strong>الجمعة</strong><p>13 نوفمبر 2026</p></article>
         <article className="detail-card"><div className="detail-icon"><Clock3/></div><span>موعدنا</span><strong>2:00 ظهرًا</strong><p>بعد صلاة الجمعة</p></article>
         <article className="detail-card location-card"><div className="detail-icon"><MapPin/></div><span>مكان الاحتفال</span><strong>كافيه 101</strong><p>خلف مدرسة رويال</p><a href={MAP_URL} target="_blank" rel="noreferrer">افتح الموقع على الخريطة <MapPin size={15}/></a></article>
       </div>
