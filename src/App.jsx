@@ -61,7 +61,7 @@ function App() {
     if (audio) { try { await audio.play(); setPlaying(true); setShowPlayer(true); } catch { setPlaying(false); } }
   };
   const share = async () => {
-    const data = { title: 'عقيقة الأميرة تاليا', text: 'يسعدنا دعوتكم لمشاركتنا فرحتنا بعقيقة تاليا — الجمعة 13 نوفمبر 2026، الساعة 2 ظهرًا بعد صلاة الجمعة، كافيه IT'S OKAY.', url: window.location.href };
+    const data = { title: 'عقيقة الأميرة تاليا', text: "يسعدنا دعوتكم لمشاركتنا فرحتنا بعقيقة تاليا — الجمعة 13 نوفمبر 2026، الساعة 2 ظهرًا بعد صلاة الجمعة، كافيه IT'S OKAY.", url: window.location.href };
     if (navigator.share) { try { await navigator.share(data); } catch {} }
     else if (navigator.clipboard) { await navigator.clipboard.writeText(window.location.href); alert('تم نسخ رابط الدعوة'); }
   };
