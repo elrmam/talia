@@ -46,8 +46,8 @@ function App() {
   const eventCalendar = useMemo(() => {
     const start = '20261113T120000Z'; const end = '20261113T140000Z';
     const title = encodeURIComponent('عقيقة الأميرة تاليا');
-    const details = encodeURIComponent('يسعدنا مشاركتكم فرحتنا بعقيقة تاليا — كافيه 101، خلف مدرسة رويال.');
-    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${encodeURIComponent('كافيه 101، خلف مدرسة رويال')}`;
+    cconst details = encodeURIComponent("يسعدنا مشاركتكم فرحتنا بعقيقة تاليا — كافيه IT'S OKAY، مجمع سافانا.");
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location={encodeURIComponent("كافيه IT'S OKAY – مجمع سافانا")}`;
   }, []);
   const toggleMusic = async () => {
     const audio = document.getElementById('talia-audio');
