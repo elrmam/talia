@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, CalendarDays, Clock3, Music2, Volume2, VolumeX, Crown, Heart, Sparkles, ArrowDown, Share2, CalendarPlus } from 'lucide-react';
 
-const MAP_URL = 'https://maps.app.goo.gl/hK6qXZBzNryW1PR36?g_st=ac';
+const MAP_URL = 'https://maps.app.goo.gl/UzKBEiH7t8rR29jC7';
 const EVENT_DATE = new Date('2026-11-13T14:00:00+02:00');
 
 function Countdown() {
