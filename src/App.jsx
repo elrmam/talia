@@ -44,11 +44,16 @@ function App() {
   const [playing, setPlaying] = useState(false);
   const [showPlayer, setShowPlayer] = useState(false);
   const eventCalendar = useMemo(() => {
-    const start = '20261113T120000Z'; const end = '20261113T140000Z';
-    const title = encodeURIComponent('عقيقة الأميرة تاليا');
-    cconst details = encodeURIComponent("يسعدنا مشاركتكم فرحتنا بعقيقة تاليا — كافيه IT'S OKAY، مجمع سافانا.");
-    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location={encodeURIComponent("كافيه IT'S OKAY – مجمع سافانا")}`;
-  }, []);
+  const start = '20261113T120000Z';
+  const end = '20261113T140000Z';
+  const title = encodeURIComponent('عقيقة الأميرة تاليا');
+  const details = encodeURIComponent(
+    "يسعدنا مشاركتكم فرحتنا بعقيقة تاليا — كافيه IT'S OKAY، مجمع سافانا."
+  );
+  const location = encodeURIComponent("كافيه IT'S OKAY – مجمع سافانا");
+
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}`;
+}, []);
   const toggleMusic = async () => {
     const audio = document.getElementById('talia-audio');
     if (!audio) return;
@@ -61,10 +66,21 @@ function App() {
     if (audio) { try { await audio.play(); setPlaying(true); setShowPlayer(true); } catch { setPlaying(false); } }
   };
   const share = async () => {
-    const data = { title: 'عقيقة الأميرة تاليا', text: "يسعدنا دعوتكم لمشاركتنا فرحتنا بعقيقة تاليا — الجمعة 13 نوفمبر 2026، الساعة 2 ظهرًا بعد صلاة الجمعة، كافيه IT'S OKAY.", url: window.location.href };
-    if (navigator.share) { try { await navigator.share(data); } catch {} }
-    else if (navigator.clipboard) { await navigator.clipboard.writeText(window.location.href); alert('تم نسخ رابط الدعوة'); }
+  const data = {
+    title: 'عقيقة الأميرة تاليا',
+    text: "يسعدنا دعوتكم لمشاركتنا فرحتنا بعقيقة تاليا — الجمعة 13 نوفمبر 2026، الساعة 2 ظهرًا بعد صلاة الجمعة، كافيه IT'S OKAY – مجمع سافانا.",
+    url: window.location.href
   };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(data);
+    } catch {}
+  } else if (navigator.clipboard) {
+    await navigator.clipboard.writeText(window.location.href);
+    alert('تم نسخ رابط الدعوة');
+  }
+};
 
   return <main>
     {!opened && <Opening onOpen={openInvite}/>}
