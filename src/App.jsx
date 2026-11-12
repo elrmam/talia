@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, CalendarDays, Clock3, Music2, Volume2, VolumeX, Crown, Heart, Sparkles, ArrowDown, Share2, CalendarPlus } from 'lucide-react';
+import { Facebook, MessageCircle } from 'lucide-react';
 
 const MAP_URL = 'https://maps.app.goo.gl/UzKBEiH7t8rR29jC7';
 const EVENT_DATE = new Date('2026-11-13T14:00:00+02:00');
@@ -156,7 +157,46 @@ function App() {
       <div className="closing-name">تاليا <span>♡</span></div>
       <button className="share-button" onClick={share}><Share2 size={17}/> مشاركة الدعوة</button>
     </section>
-    <footer><span>صُممت بكل حب من أجل تاليا</span><div>✦</div><small>2026</small></footer>
+    <footer className="melovite-footer">
+  <div className="footer-decoration">✦</div>
+
+  <p className="footer-credit">
+    صُممت بكل حب بواسطة
+    <span> MELOVITE </span>
+  </p>
+
+  <div className="footer-line">
+    <i />
+    <span>✦</span>
+    <i />
+  </div>
+
+  <div className="footer-actions">
+    <a
+      href="https://www.facebook.com/melovite"
+      target="_blank"
+      rel="noreferrer"
+      className="footer-btn facebook-btn"
+    >
+      <Facebook size={18} />
+      تابعنا على فيسبوك
+    </a>
+
+    <a
+      href="https://wa.me/201152033177?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%B5%D9%86%D8%B9%20%D8%AF%D8%B9%D9%88%D8%A9%20%D9%84%D9%8A"
+      target="_blank"
+      rel="noreferrer"
+      className="footer-btn create-btn"
+    >
+      <MessageCircle size={18} />
+      اصنع دعوتك
+    </a>
+  </div>
+
+  <small className="footer-copy">
+    © 2026 MELOVITE · Every moment is made with love
+  </small>
+</footer>
     {showPlayer && <div className="player-dock"><div className="player-disc"><Music2 size={17}/></div><div className="player-label"><strong>أغنية تاليا</strong><span>لحنتها فرحتنا</span></div><MusicControl playing={playing} onToggle={toggleMusic}/></div>}
     {!showPlayer && opened && <button className="music-fab" onClick={toggleMusic}><Music2 size={18}/> تشغيل الأغنية</button>}
   </main>;
