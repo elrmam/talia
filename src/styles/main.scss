@@ -84,3 +84,144 @@ footer { background:#8d6572; color:#fbeef0; padding:22px 7%; display:flex; justi
  .player-dock { left:10px; bottom:10px; }.opening-frame { min-height:500px; }
 }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
+.melovite-footer {
+  position: relative;
+  overflow: hidden;
+  background: #101010;
+  color: #f8f3e9;
+  text-align: center;
+  padding: 55px 20px 28px;
+  border-top: 1px solid rgba(198, 161, 91, 0.4);
+
+  .footer-decoration {
+    color: #c6a15b;
+    font-size: 25px;
+    margin-bottom: 18px;
+    animation: footerGlow 2.5s ease-in-out infinite;
+  }
+
+  .footer-credit {
+    font-size: 17px;
+    margin: 0;
+
+    span {
+      color: #d3b16c;
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+  }
+
+  .footer-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin: 24px auto;
+
+    i {
+      width: 55px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #c6a15b
+      );
+    }
+
+    i:last-child {
+      transform: rotate(180deg);
+    }
+
+    span {
+      color: #a52c4d;
+    }
+  }
+
+  .footer-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-bottom: 32px;
+  }
+
+  .footer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 175px;
+    padding: 13px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .facebook-btn {
+    color: #e8d6a9;
+    border: 1px solid #a88b50;
+    background: transparent;
+
+    &:hover {
+      background: #c6a15b;
+      color: #101010;
+      transform: translateY(-3px);
+    }
+  }
+
+  .create-btn {
+    color: #fff;
+    background: #861d3a;
+    border: 1px solid #a52c4d;
+
+    &:hover {
+      background: #a52c4d;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(165, 44, 77, 0.25);
+    }
+  }
+
+  .footer-copy {
+    display: block;
+    color: #938b80;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+}
+
+@keyframes footerGlow {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@media (max-width: 480px) {
+  .melovite-footer {
+    padding: 42px 16px 25px;
+
+    .footer-actions {
+      flex-direction: column;
+      align-items: stretch;
+      max-width: 280px;
+      margin-inline: auto;
+      margin-bottom: 28px;
+    }
+
+    .footer-btn {
+      width: 100%;
+    }
+
+    .footer-credit {
+      font-size: 15px;
+    }
+  }
+}
